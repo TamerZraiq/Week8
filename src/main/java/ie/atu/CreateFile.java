@@ -6,7 +6,7 @@ import java.io.IOException;
 public class CreateFile {
     public static void main(String[] args) {
 
-        String fileName = "File13. txt";
+        String fileName = "File13.txt";
 
         File myFile = new File (fileName);
 

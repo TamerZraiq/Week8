@@ -2,20 +2,24 @@ package ie.atu;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.io.IOException;
-public class WriteToFile {
+
+public class PrintWrite {
     public static void main(String[] args) {
 
         String fileName = "File13.txt";
+        File myFile = new File (fileName);
 
-        try(FileWriter writer = new FileWriter(fileName, true)) {
-            writer.write("Hello\n");
-            writer.write("My Name is Tamer");
+        try(PrintWriter writer = new PrintWriter(new FileWriter(myFile, true))) {
+            writer.println("Hello");
+            writer.println("My Name is Tamer");
             writer.close();
             System.out.println("Text added to file successfully");
 
 
-        }catch(IOException e){
+        }
+        catch(IOException e){
             System.out.println("An error occured while creating the file");
 
         }
